@@ -5,7 +5,20 @@ BREAKING CHANGES
 * Update to tendermint v0.23.0. This involves removing crypto.Pubkey,
 maintaining a validator address to pubkey map, and using time.Time instead of int64 for time. [SDK PR](https://github.com/cosmos/cosmos-sdk/pull/1927)
 
+<<<<<<< HEAD
 ## PENDING
+=======
+* Gaia REST API (`gaiacli advanced rest-server`)
+
+* Gaia CLI  (`gaiacli`)
+
+* Gaia
+    * Make the transient store key use a distinct store key.
+    
+* SDK 
+
+* Tendermint 
+>>>>>>> 0d41026a... Rename transient store key to be a unique key.
 
 BREAKING CHANGES
 * API
