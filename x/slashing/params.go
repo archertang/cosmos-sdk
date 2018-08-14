@@ -93,14 +93,14 @@ func (k Keeper) MinSignedPerWindow(ctx sdk.Context) int64 {
 // Double-sign unbond duration
 func (k Keeper) DoubleSignUnbondDuration(ctx sdk.Context) time.Duration {
 	var t int64
-	k.params.Get(ctx, doubleSignUnbondDurationKey, &t)
+	k.paramstore.Get(ctx, doubleSignUnbondDurationKey, &t)
 	return time.Duration(t) * time.Second
 }
 
 // Downtime unbond duration
 func (k Keeper) DowntimeUnbondDuration(ctx sdk.Context) time.Duration {
 	var t int64
-	k.params.Get(ctx, downtimeUnbondDurationKey, &t)
+	k.paramstore.Get(ctx, downtimeUnbondDurationKey, &t)
 	return time.Duration(t) * time.Second
 }
 
