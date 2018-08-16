@@ -18,15 +18,15 @@ ci: get_tools get_vendor_deps install test_cover test_lint test
 
 check-ledger:
 ifeq ($(LEDGER_ENABLED),true)
-   	ifeq ($(UNAME_S),OpenBSD)
-   		$(info "OpenBSD detected, disabling ledger support (https://github.com/cosmos/cosmos-sdk/issues/1988)")
-   	   	TMP_BUILD_TAGS := $(BUILD_TAGS)
-   	   	BUILD_TAGS = $(filter-out ledger, $(TMP_BUILD_TAGS))
-   	else
-   	   	ifndef GCC
-   	   	   $(error "gcc not installed for ledger support, please install or set LEDGER_ENABLED to false in the Makefile")
-   	   	endif
-   	endif
+    ifeq ($(UNAME_S),OpenBSD)
+        $(info "OpenBSD detected, disabling ledger support (https://github.com/cosmos/cosmos-sdk/issues/1988)")
+        TMP_BUILD_TAGS := $(BUILD_TAGS)
+        BUILD_TAGS = $(filter-out ledger, $(TMP_BUILD_TAGS))
+    else
+        ifndef GCC
+           $(error "gcc not installed for ledger support, please install or set LEDGER_ENABLED to false in the Makefile")
+        endif
+    endif
 else
 	TMP_BUILD_TAGS := $(BUILD_TAGS)
 	BUILD_TAGS = $(filter-out ledger, $(TMP_BUILD_TAGS))
