@@ -28,8 +28,8 @@ ifeq ($(LEDGER_ENABLED),true)
         endif
     endif
 else
-	TMP_BUILD_TAGS := $(BUILD_TAGS)
-	BUILD_TAGS = $(filter-out ledger, $(TMP_BUILD_TAGS))
+  TMP_BUILD_TAGS := $(BUILD_TAGS)
+  BUILD_TAGS = $(filter-out ledger, $(TMP_BUILD_TAGS))
 endif
 
 build: check-ledger
